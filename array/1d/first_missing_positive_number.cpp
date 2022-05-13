@@ -27,7 +27,7 @@ int findMissingNumber(std::vector<int>arr) {
 
 int main() {
 
-	std::vector<int>arr = {1, 1};
+	std::vector<int>arr = {3, 2, -6, 1, 0};
 	std::cout << findMissingNumber(arr) << '\n';
 
 	return 0;
