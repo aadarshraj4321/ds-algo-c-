@@ -1,14 +1,16 @@
 #include<bits/stdc++.h>
 
 
-std::vector<int>findPair(std::vector<int>arr, int target) {
+std::vector<std::vector<int>>findPair(std::vector<int>arr, int target) {
+	
+	std::sort(arr.begin(), arr.end());
 	std::unordered_set<int>track;
-	std::vector<int>finalResult;
+	std::vector<std::vector<int>>finalResult;
 	for(int i = 0; i < arr.size(); i++) {
 		int remainValue = target - arr[i];
 		if(track.find(remainValue) != track.end()) {
-			finalResult.push_back(remainValue);
-			finalResult.push_back(arr[i]);
+
+			finalResult.push_back({remainValue, arr[i]});
 		}
 		track.insert(arr[i]);
 	}
@@ -19,8 +21,8 @@ std::vector<int>findPair(std::vector<int>arr, int target) {
 int main() {
 
 
-	std::vector<int>arr = {11, 23, 45, 23, 4, 2, -8};
-	int target = 47;
+	std::vector<int>arr = {2, -6, 2, 5, 2 };
+	int target = 4;
 
 	// std::vector<int>takeResult;
 	// takeResult = findPair(arr, target);
@@ -32,7 +34,10 @@ int main() {
 	}
 
 	for(int i = 0; i < takeResult.size(); i++) {
-		std::cout << takeResult[i] << " ";
+		for(int j = 0; j < takeResult.size(); j++) {
+			std::cout << takeResult[i][j] << " ";
+		}
+		std::cout << '\n';
 	}
 
 	return 0;
