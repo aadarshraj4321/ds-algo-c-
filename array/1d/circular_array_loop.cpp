@@ -43,7 +43,7 @@ bool isCycleInArray(std::vector<int>arr) {
 int main() {
 
 
-	std::vector<int>arr = {2, -1, 1, -2, 2};
+	std::vector<int>arr = {3, 1, 2};
 	std::cout << isCycleInArray(arr) << '\n';
 
 	return 0;
