@@ -17,8 +17,8 @@ int comapreVersion(std::string versionOne, std::string versionTwo) {
 			i++;
 		}
 
-		while(j < twoLength && versionTwo[i] != '.') {
-			int tmp = versionTwo[i] - '0';
+		while(j < twoLength && versionTwo[j] != '.') {
+			int tmp = versionTwo[j] - '0';
 			numTwo = numTwo * 10 + tmp;
 			j++;
 		}
